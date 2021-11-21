@@ -4,6 +4,10 @@ terraform {
       source  = "digitalocean/digitalocean"
       version = "~> 2.0"
     }
+    ansible = {
+      source  = "nbering/ansible"
+      version = "1.0.4"
+    }
   }
   required_version = "~> 1.0.3"
   backend "remote" {
