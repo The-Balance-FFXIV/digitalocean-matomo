@@ -33,9 +33,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Don't let any variables slip in
-*.tfvars
-
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
