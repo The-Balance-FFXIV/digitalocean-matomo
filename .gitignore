@@ -54,3 +54,6 @@ terraform.rc
 
 # Support for Project snippet scope
 !.vscode/*.code-snippets
+
+### Ansible ###
+*.retry
