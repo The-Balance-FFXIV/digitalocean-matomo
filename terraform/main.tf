@@ -32,16 +32,16 @@ resource "digitalocean_database_db" "database" {
 resource "digitalocean_database_cluster" "matomo-backend" {
   name       = "matomo-backend-db-cluster"
   engine     = "mysql"
-  version    = "8"              # TODO: Adjust this
-  size       = "db-s-1vcpu-1gb" # TODO: Adjust this
-  region     = "nyc1"           # TODO: Adjust this
+  version    = var.db_version
+  size       = var.db_size
+  region     = var.do_region
   node_count = 1
 }
 
 resource "digitalocean_droplet" "matomo" {
   image    = "ubuntu-18-04-x64" # For Nono
   name     = "matomo-webserver"
-  region   = "nyc1"        # TODO: Adjust this
+  region   = var.do_region
   size     = "s-1vcpu-1gb" # TODO: Adjust this
   ssh_keys = [digitalocean_ssh_key.default.fingerprint]
 }
